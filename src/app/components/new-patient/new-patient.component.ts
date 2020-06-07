@@ -28,7 +28,9 @@ export class NewPatientComponent implements OnInit {
     });
     this.patientForm = this.formBuilder.group({
       name: ['', Validators.required],
+      lastname: ['', Validators.required],
       address: ['', Validators.required],
+      birthday: ['', Validators.required],
       photoURL: ['', Validators.required],
     });
   }

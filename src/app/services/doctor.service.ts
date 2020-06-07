@@ -17,8 +17,8 @@ export class DoctorService {
     console.log('Service ready');
   }
 
-  getDoctors() {
-    return this.http.get(this.URL + this.GET_ALL).pipe(
+  getDoctors(id: number) {
+    return this.http.get(`${this.URL}${this.GET_ALL}/${id}`).pipe(
       tap((doctors) => console.log(doctors)),
       catchError(this.handleError('Get Doctors'))
     );
@@ -33,6 +33,13 @@ export class DoctorService {
 
   addDoctor(doctor: Doctor) {
     return this.http.post(this.URL + this.ADD, doctor).pipe(
+      tap((res) => console.log(res)),
+      catchError(this.handleError('error'))
+    );
+  }
+
+  getPhoto() {
+    return this.http.get('https://randomuser.me/api/').pipe(
       tap((res) => console.log(res)),
       catchError(this.handleError('error'))
     );

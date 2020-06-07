@@ -3,4 +3,8 @@ export interface Hospital {
   name: string;
   address: string;
   photoURL: string;
+  created: string;
+  updated: string;
+  createdBy: string;
+  updatedBy: string;
 }

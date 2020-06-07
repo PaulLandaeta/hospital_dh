@@ -1,1 +1,57 @@
-<p>doctors works!</p>
+<div class="container p-5">
+  <div class="row">
+    <div class="col-10">
+      <h1>Doctores</h1>
+    </div>
+    <div class="col-2">
+      <button type="button" (click)="createDoctor()" class="btn btn-success btn-block">
+        <span>Crear </span>
+        <span class="material-icons font-icon">
+          create
+        </span>
+      </button>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="card-columns">
+      <div class="card" *ngFor="let doctor of doctors">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12 col-lg-8 col-md-6">
+              <h3 class="mb-0 text-truncated">{{doctor.name}}</h3>
+              <p class="lead">Medico</p>
+            </div>
+            <div class="col-12 col-lg-4 col-md-6 text-center">
+              <img [src]="doctor.photo_url" alt="" class="mx-auto rounded-circle img-fluid">
+              <br>
+              <ul class="list-inline ratings text-center" title="Ratings">
+                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                </li>
+                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                </li>
+                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                </li>
+                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                </li>
+                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-12 col-lg-5">
+              <h3 class="mb-0">20.7K</h3>
+              <button class="btn btn-block btn-outline-success"><span
+                  class="fa fa-plus-circle"></span>Pacientes</button>
+            </div>
+            <div class="col-12 col-lg-7">
+              <h3 class="mb-0">245</h3>
+              <button class="btn btn-outline-info btn-block"><span class="fa fa-user"></span>Especialidades</button>
+            </div>
+            <!--/col-->
+          </div>
+          <!--/row-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,4 @@
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -32,6 +33,7 @@ import { SpecialtyComponent } from './components/specialty/specialty.component';
 import { DoctorService } from './services/doctor.service';
 import { SpecialtyService } from './services/specialty.service';
 import { NotesService } from './services/notes.service';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,8 @@ import { NotesService } from './services/notes.service';
     MatInputModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [
     HospitalService,

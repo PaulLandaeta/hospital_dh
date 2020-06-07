@@ -10,6 +10,7 @@ import { SpecialityComponent } from './components/speciality/speciality.componen
 import { SpecialtyComponent } from './components/specialty/specialty.component';
 import { NewSpecialtyComponent } from './components/new-specialty/new-specialty.component';
 import { DoctorsComponent } from './components/doctors/doctors.component';
+import { NewDoctorComponent } from './components/new-doctor/new-doctor.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'new-specialty/:id', component: NewSpecialtyComponent },
   { path: 'specialty/:id', component: SpecialtyComponent },
   { path: 'doctors/:id', component: DoctorsComponent },
+  { path: 'new-doctor/:id', component: NewDoctorComponent },
   {
     path: '**',
     pathMatch: 'full',

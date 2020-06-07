@@ -6,4 +6,8 @@ export interface Specialty {
   description: string;
   icon: string;
   hospitals: Hospital[];
+  created: string;
+  updated: string;
+  createdBy: string;
+  updatedBy: string;
 }

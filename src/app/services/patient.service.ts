@@ -11,7 +11,8 @@ export class PatientService {
   private ADD = 'patient/add';
   private GET_PATIENT = 'patient/';
   private GET_ALL = 'patients';
-
+  // TODO: create login to manage users;
+  private user = 'admin';
   private patients: Patient[] = [];
   constructor(private http: HttpClient) {
     console.log('Service ready');
@@ -32,6 +33,9 @@ export class PatientService {
   }
 
   addPatient(patient: Patient) {
+    patient.createdBy = this.user;
+    patient.created = new Date();
+
     return this.http.post(this.URL + this.ADD, patient).pipe(
       tap((res) => console.log(res)),
       catchError(this.handleError('error'))
