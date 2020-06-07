@@ -17,8 +17,8 @@ export class PatientService {
     console.log('Service ready');
   }
 
-  getPatients() {
-    return this.http.get(this.URL + this.GET_ALL).pipe(
+  getPatients(id: number) {
+    return this.http.get(`${this.URL}${this.GET_ALL}/${id}`).pipe(
       tap((hospitals) => console.log(hospitals)),
       catchError(this.handleError('Get Hospitals'))
     );

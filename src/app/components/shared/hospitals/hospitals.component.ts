@@ -34,4 +34,14 @@ export class HospitalsComponent implements OnInit {
   goToSpecialties() {
     this.router.navigate(['/specialties', this.idHospital]);
   }
+
+  goToDoctors() {
+    this.router.navigate(['/doctors', this.idHospital]);
+  }
+
+  getImage() {
+    return this.hospital.photoURL
+      ? this.hospital.photoURL
+      : 'https://previews.123rf.com/images/neyro2008/neyro20081512/neyro2008151200317/49781838-ilustraci%C3%B3n-de-la-ciudad-del-edificio-del-hospital-en-el-estilo-de-dise%C3%B1o-plano-arquitectura-cl%C3%ADnica-hospita.jpg';
+  }
 }

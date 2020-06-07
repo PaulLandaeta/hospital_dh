@@ -21,10 +21,12 @@ export class PatientsComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       const { id } = params;
       this.id = id;
-    });
-    this.patientService.getPatients().subscribe((patients: Patient[]) => {
-      this.patients = patients;
-      this.dataSource.data = this.patients;
+      this.patientService
+        .getPatients(this.id)
+        .subscribe((patients: Patient[]) => {
+          this.patients = patients;
+          this.dataSource.data = this.patients;
+        });
     });
   }
 
