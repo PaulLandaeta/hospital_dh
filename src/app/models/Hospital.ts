@@ -3,8 +3,8 @@ export interface Hospital {
   name: string;
   address: string;
   photoURL: string;
-  created: string;
-  updated: string;
+  created: Date;
+  updated: Date;
   createdBy: string;
   updatedBy: string;
 }

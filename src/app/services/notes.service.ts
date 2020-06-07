@@ -11,7 +11,8 @@ export class NotesService {
   private ADD = 'notes/add';
   private GET_NOTES = 'notes/';
   private GET_ALL = 'notes';
-
+  // TODO: create login to manage users;
+  private user = 'admin';
   private notes: Notes[] = [];
   constructor(private http: HttpClient) {
     console.log('Service ready');
@@ -32,6 +33,8 @@ export class NotesService {
   }
 
   addPatient(notes: Notes) {
+    notes.createdBy = this.user;
+    notes.created = new Date();
     return this.http.post(this.URL + this.ADD, notes).pipe(
       tap((res) => console.log(res)),
       catchError(this.handleError('error'))

@@ -8,8 +8,8 @@ export interface Doctor {
   address: string;
   hospital: Hospital;
   photo_url: string;
-  created: string;
-  updated: string;
+  created: Date;
+  updated: Date;
   createdBy: string;
   updatedBy: string;
 }

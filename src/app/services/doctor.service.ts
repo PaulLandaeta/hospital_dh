@@ -11,7 +11,8 @@ export class DoctorService {
   private ADD = 'doctor/add';
   private GET_DOCTOR = 'doctor/';
   private GET_ALL = 'doctors';
-
+  // TODO: create login to manage users;
+  private user = 'admin';
   private doctors: Doctor[] = [];
   constructor(private http: HttpClient) {
     console.log('Service ready');
@@ -32,6 +33,8 @@ export class DoctorService {
   }
 
   addDoctor(doctor: Doctor) {
+    doctor.createdBy = this.user;
+    doctor.created = new Date();
     return this.http.post(this.URL + this.ADD, doctor).pipe(
       tap((res) => console.log(res)),
       catchError(this.handleError('error'))

@@ -8,12 +8,12 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable()
 export class HospitalService {
-
   private URL = environment.url;
   private ADD = 'hospital/add';
   private GET_ALL = 'hospitals';
   private GET_HOSPITAL = 'hospital/';
-
+  // TODO: create login to manage users;
+  private user = 'admin';
   constructor(private http: HttpClient) {
     console.log('Service ready');
   }
@@ -33,6 +33,8 @@ export class HospitalService {
   }
 
   addHospital(hospital: Hospital) {
+    hospital.createdBy = this.user;
+    hospital.created = new Date();
     return this.http.post(this.URL + this.ADD, hospital).pipe(
       tap((res) => console.log(res)),
       catchError(this.handleError('error'))

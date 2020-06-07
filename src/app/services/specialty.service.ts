@@ -11,7 +11,8 @@ export class SpecialtyService {
   private ADD = 'specialty/add';
   private GET_SPECIALTY = 'specialty/';
   private GET_ALL = 'specialities/';
-
+  // TODO: create login to manage users;
+  private user = 'admin';
   private specialties: Specialty[] = [];
   constructor(private http: HttpClient) {
     console.log('Service ready');
@@ -32,6 +33,8 @@ export class SpecialtyService {
   }
 
   addSpecialty(specialty: Specialty) {
+    specialty.createdBy = this.user;
+    specialty.created = new Date();
     return this.http.post(this.URL + this.ADD, specialty).pipe(
       tap((res) => console.log(res)),
       catchError(this.handleError('error'))
