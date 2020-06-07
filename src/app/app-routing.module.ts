@@ -7,6 +7,8 @@ import { PatientComponent } from './components/patient/patient.component';
 import { HospitalComponent } from './components/hospital/hospital.component';
 import { NewPatientComponent } from './components/new-patient/new-patient.component';
 import { SpecialityComponent } from './components/speciality/speciality.component';
+import { SpecialtyComponent } from './components/specialty/specialty.component';
+import { NewSpecialtyComponent } from './components/new-specialty/new-specialty.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -16,6 +18,8 @@ const routes: Routes = [
   { path: 'patients/:id', component: PatientsComponent },
   { path: 'patient/:id', component: PatientComponent },
   { path: 'specialties/:id', component: SpecialityComponent },
+  { path: 'new-specialty/:id', component: NewSpecialtyComponent },
+  { path: 'specialty/:id', component: SpecialtyComponent },
   {
     path: '**',
     pathMatch: 'full',

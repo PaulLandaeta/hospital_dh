@@ -29,6 +29,9 @@ import { NewDoctorComponent } from './components/new-doctor/new-doctor.component
 import { DoctorComponent } from './components/doctor/doctor.component';
 import { NewSpecialtyComponent } from './components/new-specialty/new-specialty.component';
 import { SpecialtyComponent } from './components/specialty/specialty.component';
+import { DoctorService } from './services/doctor.service';
+import { SpecialtyService } from './services/specialty.service';
+import { NotesService } from './services/notes.service';
 
 @NgModule({
   declarations: [
@@ -60,7 +63,13 @@ import { SpecialtyComponent } from './components/specialty/specialty.component';
     HttpClientModule,
     ReactiveFormsModule,
   ],
-  providers: [HospitalService, PatientService],
+  providers: [
+    HospitalService,
+    PatientService,
+    SpecialtyService,
+    DoctorService,
+    NotesService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

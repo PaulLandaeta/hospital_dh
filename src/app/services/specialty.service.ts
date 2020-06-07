@@ -10,15 +10,15 @@ export class SpecialtyService {
   private URL = environment.url;
   private ADD = 'specialty/add';
   private GET_SPECIALTY = 'specialty/';
-  private GET_ALL = 'specialties';
+  private GET_ALL = 'specialities/';
 
   private specialties: Specialty[] = [];
   constructor(private http: HttpClient) {
     console.log('Service ready');
   }
 
-  getSpecialties() {
-    return this.http.get(this.URL + this.GET_ALL).pipe(
+  getSpecialties(id: number) {
+    return this.http.get(`${this.URL}${this.GET_ALL}${id}`).pipe(
       tap((specialties) => console.log(specialties)),
       catchError(this.handleError('Get Specialties'))
     );
@@ -31,7 +31,7 @@ export class SpecialtyService {
     );
   }
 
-  addPatient(specialty: Specialty) {
+  addSpecialty(specialty: Specialty) {
     return this.http.post(this.URL + this.ADD, specialty).pipe(
       tap((res) => console.log(res)),
       catchError(this.handleError('error'))

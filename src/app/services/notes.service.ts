@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Notes } from '../models/notes';
 import { environment } from 'src/environments/environment';
 import { Observable, of } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { Notes } from '../models/Notes';
 
 @Injectable()
 export class NotesService {
