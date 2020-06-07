@@ -28,7 +28,9 @@ export class NewDoctorComponent implements OnInit {
     });
     this.doctorForm = this.formBuilder.group({
       name: ['', Validators.required],
+      lastname: ['', Validators.required],
       address: ['', Validators.required],
+      birthday: ['', Validators.required],
     });
   }
 

@@ -9,7 +9,7 @@ import { Patient } from 'src/app/models/Patient';
   styleUrls: ['./patients.component.scss'],
 })
 export class PatientsComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['nombre', 'apellido', 'fecha', 'acciones'];
   patients: Patient[] = [];
   dataSource = new MatTableDataSource(this.patients);
   id: number;
