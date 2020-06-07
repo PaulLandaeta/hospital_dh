@@ -30,4 +30,8 @@ export class HospitalsComponent implements OnInit {
   goToPatients() {
     this.router.navigate(['/patients', this.idHospital]);
   }
+
+  goToSpecialties() {
+    this.router.navigate(['/specialties', this.idHospital]);
+  }
 }

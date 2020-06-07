@@ -1,4 +1,4 @@
-<div class="container pt-5">
+<div class="container pt-5" *ngIf="patient">
   <div class="row h-25">
     <div class="col-4">
       <div class="text-center">
@@ -6,8 +6,11 @@
       </div>
     </div>
     <div class="col-8">
-
+      <span><span class="font-weight-bolder">Nombre: </span> {{patient.name}}</span><br>
+      <span><span class="font-weight-bolder">Dirección: </span> {{patient.address}}</span><br>
+      <button type="button" class="btn btn-primary">Agendar Cita</button>
     </div>
+
   </div>
   <div class="row  pt-5 m-0  h-75">
     <div class="col-6 px-0">
@@ -15,16 +18,19 @@
         <h5 class="card-header">Historia medica</h5>
         <div class="card-body p-0 m-0">
           <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center active">
+            <li class="list-group-item d-flex justify-content-between align-items-center"
+              *ngFor="let note of patient.notes">
               <span>
                 Prescripción<br>
                 <small>Dr. Juan Perez</small>
               </span>
               <span class="badge badge-primary badge-pill">2</span>
             </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              Morbi leo risus
-              <span class="badge badge-primary badge-pill">1</span>
+            <li class="list-group-item d-flex justify-content-between align-items-center"
+              *ngIf="patient.notes.length == 0">
+              <span>
+                No existen consultas aun<br>
+              </span>
             </li>
           </ul>
         </div>

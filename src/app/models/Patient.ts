@@ -1,4 +1,5 @@
 import { Hospital } from './Hospital';
+import { Notes } from './Notes';
 
 export interface Patient {
   id?: number;
@@ -7,4 +8,5 @@ export interface Patient {
   name: string;
   phone: string;
   hospital: Hospital;
+  notes: Notes[];
 }

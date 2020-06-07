@@ -24,6 +24,7 @@ import { HospitalComponent } from './components/hospital/hospital.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NewPatientComponent } from './components/new-patient/new-patient.component';
 import { PatientService } from './services/patient.service';
+import { NewNotesComponent } from './components/new-notes/new-notes.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { PatientService } from './services/patient.service';
     PatientComponent,
     HospitalComponent,
     NewPatientComponent,
+    NewNotesComponent,
   ],
   imports: [
     BrowserModule,
