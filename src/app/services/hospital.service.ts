@@ -8,22 +8,12 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable()
 export class HospitalService {
+
   private URL = environment.url;
   private ADD = 'hospital/add';
   private GET_ALL = 'hospitals';
-  private GET_HOSPITAL = 'hospital/'
-  private hospitals: any[] = [
-    {
-      id: 1,
-      name: 'Obrero',
-      address: 'miraflores',
-    },
-    {
-      id: 2,
-      name: 'Arco Iris',
-      address: 'Villa Fatima',
-    },
-  ];
+  private GET_HOSPITAL = 'hospital/';
+
   constructor(private http: HttpClient) {
     console.log('Service ready');
   }
@@ -36,7 +26,7 @@ export class HospitalService {
   }
 
   getHospital(id: number) {
-    return this.http.get(`${this.URL}${this.GET_HOSPITAL}?id=${id}`).pipe(
+    return this.http.get(`${this.URL}${this.GET_HOSPITAL}${id}`).pipe(
       tap((hospital) => console.log(hospital)),
       catchError(this.handleError('Get Hospitals'))
     );

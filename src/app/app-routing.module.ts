@@ -5,10 +5,12 @@ import { HospitalsComponent } from './components/shared/hospitals/hospitals.comp
 import { PatientsComponent } from './components/patients/patients.component';
 import { PatientComponent } from './components/patient/patient.component';
 import { HospitalComponent } from './components/hospital/hospital.component';
+import { NewPatientComponent } from './components/new-patient/new-patient.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'hospital-new', component: HospitalComponent },
+  { path: 'new-patient/:id', component: NewPatientComponent },
   { path: 'hospitals/:id', component: HospitalsComponent },
   { path: 'patients/:id', component: PatientsComponent },
   { path: 'patient/:id', component: PatientComponent },

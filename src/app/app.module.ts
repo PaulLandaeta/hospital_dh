@@ -22,6 +22,8 @@ import { MatInputModule } from '@angular/material/input';
 import { PatientComponent } from './components/patient/patient.component';
 import { HospitalComponent } from './components/hospital/hospital.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NewPatientComponent } from './components/new-patient/new-patient.component';
+import { PatientService } from './services/patient.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SpecialityComponent,
     PatientComponent,
     HospitalComponent,
-
+    NewPatientComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,9 +48,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatTableModule,
     MatInputModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [HospitalService],
+  providers: [HospitalService, PatientService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

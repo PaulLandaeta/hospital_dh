@@ -1,0 +1,25 @@
+<div class="container p-5">
+  <div class="card">
+    <h5 class="card-header">Información del Paciente</h5>
+    <div class="card-body">
+      <form (ngSubmit)="createPatient(patientForm)" [formGroup]="patientForm">
+        <div class="form-group">
+          <label class="control-label">Nombre del Paciente</label>
+          <input type="email" class="form-control" formControlName="name">
+          <small id="emailHelp" class="form-text text-muted">Ingrese Nombre del Paciente</small>
+        </div>
+        <div class="form-group">
+          <label>Dirección</label>
+          <input type="text" class="form-control" formControlName="address">
+        </div>
+        <div class="form-group">
+          <label>Encargado</label>
+          <input type="text" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </form>
+
+    </div>
+  </div>
+
+</div>
