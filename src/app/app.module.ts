@@ -25,6 +25,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NewPatientComponent } from './components/new-patient/new-patient.component';
 import { PatientService } from './services/patient.service';
 import { NewNotesComponent } from './components/new-notes/new-notes.component';
+import { NewDoctorComponent } from './components/new-doctor/new-doctor.component';
+import { DoctorComponent } from './components/doctor/doctor.component';
+import { NewSpecialtyComponent } from './components/new-specialty/new-specialty.component';
+import { SpecialtyComponent } from './components/specialty/specialty.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +44,10 @@ import { NewNotesComponent } from './components/new-notes/new-notes.component';
     HospitalComponent,
     NewPatientComponent,
     NewNotesComponent,
+    NewDoctorComponent,
+    DoctorComponent,
+    NewSpecialtyComponent,
+    SpecialtyComponent,
   ],
   imports: [
     BrowserModule,
